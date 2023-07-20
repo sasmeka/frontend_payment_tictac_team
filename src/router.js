@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandingPage from "./page/landing_page";
 import SplashScreen from "../src/component/landing_page/splashscreen";
 import PersonalProfile from "./page/personalProfile";
+import Home from "./page/home";
 
 function Router() {
   const [isLoading, setIsLoading] = useState(true);
