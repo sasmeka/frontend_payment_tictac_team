@@ -1,7 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: ["./src/**/*.{html,js,jsx}"],
-    theme: {},
+    theme: {
+        extend: {
+            colors: {
+                'primary': '#6379F4',
+              },
+        }
+    },
     plugins: [require('daisyui')],
     daisyui: {
         themes: false, // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
