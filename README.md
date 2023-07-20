@@ -49,7 +49,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This project employs React to create a front-end app from a Zwallet mockup with all of its functionality working properly..
+This project employs React to create a front-end app from a Zwallet mockup with all of its functionality working properly.
 
 TicTac Team:
 1. Verdi Sasmeka
