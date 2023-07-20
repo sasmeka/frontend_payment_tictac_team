@@ -11,6 +11,8 @@ import { MdPersonOutline, MdLogout } from 'react-icons/md'
 import profile from '../../assets/img/Default_Profile.png'
 import Sidebar from '../../component/homeComp/sidebar'
 
+import authChecked from '../../helper/authCheck'
+
 
 function home() {
     return (
@@ -110,4 +112,4 @@ function home() {
     )
 }
 
-export default home
+export default authChecked(true, home, ['user'])
