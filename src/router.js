@@ -23,6 +23,7 @@ function Router() {
         ) : (
           <>
             <Route path="/" element={<LandingPage />} />
+            <Route path="/Home" element={<Home/>}/>
             <Route path="/personal-profile" element={<PersonalProfile />} />
           </>
         )}
