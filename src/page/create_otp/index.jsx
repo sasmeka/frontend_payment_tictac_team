@@ -70,7 +70,7 @@ function Create_otp() {
                     {
                         success_message == 'success-create-otp' ? (
                             <>
-                                <i class="fa fa-check-circle w-full text-7xl text-green-600" aria-hidden="true"></i>
+                                <i className="fa fa-check-circle w-full text-7xl text-green-600" aria-hidden="true"></i>
                                 <p className="text-[#AAAAAA] text-md md:text-lg tracking-wide mb-8 mt-10">Your PIN was successfully created and you can now access all the features in Zwallet. Login to your new account and start exploring!</p>
                                 <button onClick={() => { setsuccess_message(''), seterror_message(''), navigates('/sign-in'); }} className="bg-[#6379F4] mt-5 h-12 md:h-14 w-full rounded-2xl text-black font-semibold tracking-wider text-white font-semibold tracking-wider mt-10">Re-login</button>
                             </>

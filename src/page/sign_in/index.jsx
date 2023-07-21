@@ -67,13 +67,13 @@ function Sign_in() {
                         <p className="text-[#AAAAAA] text-md md:text-lg tracking-wide mb-8">Transfering money is eassier than ever, you can access Zwallet wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!</p>
                         <div className="flex flex-col mb-10">
                             <div className="relative w-full items-center">
-                                <i class={(email == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-envelope-o absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
+                                <i className={(email == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-envelope-o absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
                                 <input type="text" onChange={(e) => setemail(e.target.value)} className={(email == '' ? 'border-opacity-50 border-[#A9A9A9]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your e-mail" />
                             </div>
                         </div>
                         <div className="flex flex-col mb-10">
                             <div className="relative w-full items-center">
-                                <i class={(password == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-lock absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
+                                <i className={(password == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-lock absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
                                 <input type={cpass ? "password" : "text"} onChange={(e) => setpassword(e.target.value)} className={(password == '' ? 'border-opacity-50 border-[#A9A9A9]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your password" />
                                 <Link onClick={click_pass}><i className="fa fa-eye absolute top-4 md:top-[1.1rem] right-3 text-[#A0A3BD]" aria-hidden="true"></i></Link>
                             </div>
