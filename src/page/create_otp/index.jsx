@@ -53,6 +53,9 @@ function Create_otp() {
         }
     }
     useEffect(() => {
+        document.title = 'Create PIN';
+    }, []);
+    useEffect(() => {
         setTimeout(() => {
             seterror_message('')
         }, 7000)

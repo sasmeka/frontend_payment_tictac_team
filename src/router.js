@@ -10,7 +10,9 @@ import Home from "./page/home";
 import Signin from "./page/sign_in";
 import Signup from "./page/sign_up";
 import Verification from "./page/verification";
-import Createotp from "./page/create_otp"
+import Createotp from "./page/create_otp";
+import Reset_password from "./page/reset_password";
+import Reset_change_password from "./page/reset_change_password"
 
 function Router() {
   const [success_message, setsuccess_message] = useState("");
@@ -38,12 +40,17 @@ function Router() {
             ) : (
               <>
                 <Route path="/" element={<LandingPage />} />
-                <Route path="/verification" element={<Verification />} />
-                <Route path="/Home" element={<Home />} />
-                <Route path="/personal-profile" element={<PersonalProfile />} />
+
                 <Route path="/sign-in" element={<Signin />} />
                 <Route path="/sign-up" element={<Signup />} />
+                <Route path="/verification" element={<Verification />} />
                 <Route path="/create-otp" element={<Createotp />} />
+                <Route path="/reset-password" element={<Reset_password />} />
+                <Route path="/reset-change-password" element={<Reset_change_password />} />
+
+                <Route path="/Home" element={<Home />} />
+                <Route path="/personal-profile" element={<PersonalProfile />} />
+
               </>
             )}
           </Routes>
