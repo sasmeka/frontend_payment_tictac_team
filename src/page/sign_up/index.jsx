@@ -67,38 +67,38 @@ function Sign_up() {
                         <p className="text-[#AAAAAA] text-md md:text-lg tracking-wide mb-8">Transfering money is eassier than ever, you can access Zwallet wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!</p>
                         <div className="flex flex-col mb-10">
                             <div className="relative w-full items-center">
-                                <i className={(username == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-user absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
-                                <input type="text" onChange={(e) => setusername(e.target.value)} className={(username == '' ? 'border-opacity-50 border-[#A0A3BD]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your username" />
+                                <i className={(error_message != '' ? 'text-red-400' : username == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-user absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
+                                <input type="text" onChange={(e) => setusername(e.target.value)} className={(error_message != '' ? 'border-red-400' : username == '' ? 'border-opacity-50 border-[#A0A3BD]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your username" />
                             </div>
                         </div>
                         <div className="flex flex-col mb-10">
                             <div className="relative w-full items-center">
-                                <i className={(first == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-pencil-square-o absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
-                                <input type="text" onChange={(e) => setfirst(e.target.value)} className={(first == '' ? 'border-opacity-50 border-[#A0A3BD]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your first name" />
+                                <i className={(error_message != '' ? 'text-red-400' : first == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-pencil-square-o absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
+                                <input type="text" onChange={(e) => setfirst(e.target.value)} className={(error_message != '' ? 'border-red-400' : first == '' ? 'border-opacity-50 border-[#A0A3BD]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your first name" />
                             </div>
                         </div>
                         <div className="flex flex-col mb-10">
                             <div className="relative w-full items-center">
-                                <i className={(last == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-pencil-square-o absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
-                                <input type="text" onChange={(e) => setlast(e.target.value)} className={(last == '' ? 'border-opacity-50 border-[#A0A3BD]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your last name" />
+                                <i className={(error_message != '' ? 'text-red-400' : last == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-pencil-square-o absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
+                                <input type="text" onChange={(e) => setlast(e.target.value)} className={(error_message != '' ? 'border-red-400' : last == '' ? 'border-opacity-50 border-[#A0A3BD]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your last name" />
                             </div>
                         </div>
                         <div className="flex flex-col mb-10">
                             <div className="relative w-full items-center">
-                                <i className={(email == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-envelope-o absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
-                                <input type="text" onChange={(e) => setemail(e.target.value)} className={(email == '' ? 'border-opacity-50 border-[#A0A3BD]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your e-mail" />
+                                <i className={(error_message != '' ? 'text-red-400' : email == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-envelope-o absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
+                                <input type="text" onChange={(e) => setemail(e.target.value)} className={(error_message != '' ? 'border-red-400' : email == '' ? 'border-opacity-50 border-[#A0A3BD]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your e-mail" />
                             </div>
                         </div>
                         <div className="flex flex-col mb-10">
                             <div className="relative w-full items-center">
-                                <i className={(password == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-lock absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
-                                <input type={cpass ? "password" : "text"} onChange={(e) => setpassword(e.target.value)} className={(password == '' ? 'border-opacity-50 border-[#A0A3BD]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your password" />
+                                <i className={(error_message != '' ? 'text-red-400' : password == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-lock absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
+                                <input type={cpass ? "password" : "text"} onChange={(e) => setpassword(e.target.value)} className={(error_message != '' ? 'border-red-400' : password == '' ? 'border-opacity-50 border-[#A0A3BD]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your password" />
                                 <Link onClick={click_pass}><i className="fa fa-eye absolute top-3 md:top-[1rem] right-3 text-[#A0A3BD]" aria-hidden="true"></i></Link>
                             </div>
                         </div>
                         {
                             error_message != '' ? (
-                                <div className="text-red-600 tracking-wide mb-3 text-sm">{error_message}</div>
+                                <div className="text-red-400 tracking-wide mb-3 text-sm">{error_message}</div>
                             ) : ''
                         }
                         <button type="submit" className={(username != '' && first != '' && last != '' && email != '' && password != '' ? 'bg-[#6379F4]' : 'bg-[#e7e7e7]') + " mt-10 h-12 md:h-14 w-full rounded-2xl text-black font-semibold tracking-wider text-white font-semibold tracking-wider"} >Sign up</button>

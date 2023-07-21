@@ -53,13 +53,13 @@ function Reset_password() {
                         <p className="text-[#AAAAAA] text-md md:text-lg tracking-wide mb-8 mt-10">To reset your password, you must type your e-mail and we will send a link to your email and you will be directed to the reset password screens.</p>
                         <div className="flex flex-col mb-5">
                             <div className="relative w-full items-center">
-                                <i className={(email == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-envelope-o absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
-                                <input type="text" onChange={(e) => setemail(e.target.value)} className={(email == '' ? 'border-opacity-50 border-[#A9A9A9]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your e-mail" />
+                                <i className={(error_message != '' ? 'text-red-400' : email == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-envelope-o absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
+                                <input type="text" onChange={(e) => setemail(e.target.value)} className={(error_message != '' ? 'border-red-400' : email == '' ? 'border-opacity-50 border-[#A9A9A9]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your e-mail" />
                             </div>
                         </div>
                         {
                             error_message != '' ? (
-                                <div className="text-red-600 tracking-wide mb-3 text-sm">{error_message}</div>
+                                <div className="text-red-400 tracking-wide mb-3 text-sm">{error_message}</div>
                             ) : ''
                         }
                         {
