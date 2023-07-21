@@ -36,6 +36,7 @@ function Reset_password() {
                     }
                 })
                 setsuccess_message(data.message)
+                navigate(`/sign-in`)
             }
         } catch (error) {
             seterror_message(error.response.data.message)
