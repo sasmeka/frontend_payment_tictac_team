@@ -30,7 +30,11 @@ const withAuth = (isAuth_page, Component, roles) => {
                     seterror_message('you do not have access to the page in question.')
                     logout_user()
                 }
-                dispatch(adddata(data.data))
+                if (data.data[0].pin == null || data.data[0].pin == '') {
+                    navigates(`/create-otp`)
+                } else {
+                    dispatch(adddata(data.data))
+                }
             } catch (error) {
                 if (error.response.data.status == 401) {
                     seterror_message(error.response.data.message)

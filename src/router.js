@@ -9,7 +9,8 @@ import PersonalProfile from "./page/personalProfile";
 import Home from "./page/home";
 import Signin from "./page/sign_in";
 import Signup from "./page/sign_up";
-import Verification from "./page/verification"
+import Verification from "./page/verification";
+import Createotp from "./page/create_otp"
 
 function Router() {
   const [success_message, setsuccess_message] = useState("");
@@ -42,6 +43,7 @@ function Router() {
                 <Route path="/personal-profile" element={<PersonalProfile />} />
                 <Route path="/sign-in" element={<Signin />} />
                 <Route path="/sign-up" element={<Signup />} />
+                <Route path="/create-otp" element={<Createotp />} />
               </>
             )}
           </Routes>

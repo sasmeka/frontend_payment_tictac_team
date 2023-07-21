@@ -65,21 +65,34 @@ function Sign_up() {
                     <form onSubmit={Register}>
                         <h1 className="text-2xl md:text-3xl font-bold my-2">Start Accessing Banking Needs With All Devices and All Platforms With 30.000+ Users</h1>
                         <p className="text-[#AAAAAA] text-md md:text-lg tracking-wide mb-8">Transfering money is eassier than ever, you can access Zwallet wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!</p>
-                        <div className="flex flex-col mb-5">
-                            <input type="text" onChange={(e) => setusername(e.target.value)} className="h-12 md:h-14 w-full border-b-4 pl-3 placeholder:text-[#A0A3BD] placeholder:tracking-wider" placeholder="Enter your username" />
-                        </div>
-                        <div className="flex flex-col mb-5">
-                            <input type="text" onChange={(e) => setfirst(e.target.value)} className="h-12 md:h-14 w-full border-b-4 pl-3 placeholder:text-[#A0A3BD] placeholder:tracking-wider" placeholder="Enter your first name" />
-                        </div>
-                        <div className="flex flex-col mb-5">
-                            <input type="text" onChange={(e) => setlast(e.target.value)} className="h-12 md:h-14 w-full border-b-4 pl-3 placeholder:text-[#A0A3BD] placeholder:tracking-wider" placeholder="Enter your last name" />
-                        </div>
-                        <div className="flex flex-col mb-5">
-                            <input type="text" onChange={(e) => setemail(e.target.value)} className="h-12 md:h-14 w-full border-b-4 pl-3 placeholder:text-[#A0A3BD] placeholder:tracking-wider" placeholder="Enter your e-mail" />
-                        </div>
-                        <div className="flex flex-col mb-5">
+                        <div className="flex flex-col mb-10">
                             <div className="relative w-full items-center">
-                                <input type={cpass ? "password" : "text"} onChange={(e) => setpassword(e.target.value)} className="h-12 md:h-14 w-full border-b-4 pl-3 placeholder:text-[#A0A3BD] placeholder:tracking-wider" placeholder="Enter your password" />
+                                <i class={(username == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-user absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
+                                <input type="text" onChange={(e) => setusername(e.target.value)} className={(username == '' ? 'border-opacity-50 border-[#A0A3BD]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your username" />
+                            </div>
+                        </div>
+                        <div className="flex flex-col mb-10">
+                            <div className="relative w-full items-center">
+                                <i class={(first == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-pencil-square-o absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
+                                <input type="text" onChange={(e) => setfirst(e.target.value)} className={(first == '' ? 'border-opacity-50 border-[#A0A3BD]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your first name" />
+                            </div>
+                        </div>
+                        <div className="flex flex-col mb-10">
+                            <div className="relative w-full items-center">
+                                <i class={(last == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-pencil-square-o absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
+                                <input type="text" onChange={(e) => setlast(e.target.value)} className={(last == '' ? 'border-opacity-50 border-[#A0A3BD]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your last name" />
+                            </div>
+                        </div>
+                        <div className="flex flex-col mb-10">
+                            <div className="relative w-full items-center">
+                                <i class={(email == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-envelope-o absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
+                                <input type="text" onChange={(e) => setemail(e.target.value)} className={(email == '' ? 'border-opacity-50 border-[#A0A3BD]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your e-mail" />
+                            </div>
+                        </div>
+                        <div className="flex flex-col mb-10">
+                            <div className="relative w-full items-center">
+                                <i class={(password == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-lock absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
+                                <input type={cpass ? "password" : "text"} onChange={(e) => setpassword(e.target.value)} className={(password == '' ? 'border-opacity-50 border-[#A0A3BD]' : 'border-[#6379F4]') + " h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your password" />
                                 <Link onClick={click_pass}><i className="fa fa-eye absolute top-3 md:top-[1rem] right-3 text-[#A0A3BD]" aria-hidden="true"></i></Link>
                             </div>
                         </div>
@@ -88,9 +101,9 @@ function Sign_up() {
                                 <div className="text-red-600 tracking-wide mb-3 text-sm">{error_message}</div>
                             ) : ''
                         }
-                        <button type="submit" className="mt-5 h-12 md:h-14 w-full bg-[#e7e7e7] rounded-2xl text-black font-semibold tracking-wider text-white font-semibold tracking-wider" >Sign up</button>
-                        <p className="text-center text-[#8692A6] tracking-wide text-sm md:text-md">
-                            Already have an account? Let’s<Link to="/sign-in" className="text-[#5F2EEA] underline underline-offset-4 font-semibold">Login</Link>
+                        <button type="submit" className={(username != '' && first != '' && last != '' && email != '' && password != '' ? 'bg-[#6379F4]' : 'bg-[#e7e7e7]') + " mt-10 h-12 md:h-14 w-full rounded-2xl text-black font-semibold tracking-wider text-white font-semibold tracking-wider"} >Sign up</button>
+                        <p className="text-center text-[#8692A6] tracking-wide mt-10 text-sm md:text-md">
+                            Already have an account? Let’s <Link to="/sign-in" className="text-[#5F2EEA] decoration-none font-semibold">Login</Link>
                         </p>
                     </form>
                 </div>
