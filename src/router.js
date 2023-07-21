@@ -9,6 +9,7 @@ import PersonalProfile from "./page/personalProfile";
 import Home from "./page/home";
 import Signin from "./page/sign_in";
 import Signup from "./page/sign_up";
+import Verification from "./page/verification"
 
 function Router() {
   const [success_message, setsuccess_message] = useState("");
@@ -36,6 +37,7 @@ function Router() {
             ) : (
               <>
                 <Route path="/" element={<LandingPage />} />
+                <Route path="/verification" element={<Verification />} />
                 <Route path="/Home" element={<Home />} />
                 <Route path="/personal-profile" element={<PersonalProfile />} />
                 <Route path="/sign-in" element={<Signin />} />

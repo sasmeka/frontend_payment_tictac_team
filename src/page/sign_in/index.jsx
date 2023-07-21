@@ -25,12 +25,13 @@ function Sign_in() {
         e.preventDefault()
         try {
             const { data } = await api({
-                method: 'post', url: 'login', data: {
+                method: 'post',
+                url: 'login',
+                data: {
                     "email": email,
                     "pass": password
                 }
             })
-
             dispatch(login(data.Token))
             dispatch(addrefresh_token(data.Refresh_Token))
             navigate('/home');
