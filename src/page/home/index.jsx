@@ -24,7 +24,7 @@ function home() {
                         <div className="hidden lg:flex row-span-4 bg-white auto-cols-min rounded-lg">
                             <Sidebar />
                         </div>
-                        <div class="col-span-2 bg-primary h-40 flex items-center rounded-lg justify-between px-10 py-5">
+                        <div className="col-span-2 bg-primary h-40 flex items-center rounded-lg justify-between px-10 py-5">
                             <div className='flex flex-col gap-y-3'>
                                 <h2 className='text-lg text-gray-300'>Balance</h2>
                                 <h1 className='text-4xl text-white font-bold'>Rp120.000</h1>
@@ -39,7 +39,7 @@ function home() {
                             <button className='flex text-white bg-gray-400 border items-center gap-x-3 w-28 justify-center hover:bg-white hover:text-primary rounded-lg h-12 mx-auto'><LiaArrowUpSolid /> Transfer</button>
                             <button className='flex text-white bg-gray-400 border items-center gap-x-3 w-28 justify-center hover:bg-white hover:text-primary rounded-lg h-12 mx-auto'><AiOutlinePlus /> Top Up</button>
                         </div>
-                        <div class="lg:flex flex-col hidden row-span-3 bg-white rounded-lg">
+                        <div className="lg:flex flex-col hidden row-span-3 bg-white rounded-lg">
                             <div className='flex justify-between p-4 mt-5 mx-5'>
                                 <div>
                                     <img src={down} alt="" />
@@ -54,7 +54,7 @@ function home() {
                             </div>
                             <img src={dummyData} alt="" className='mt-20 pb-5 flex px-5 items-center mx-auto' />
                         </div>
-                        <div class="row-span-3 bg-white rounded-lg overflow-auto">
+                        <div className="row-span-3 bg-white rounded-lg overflow-auto">
                             <div className='flex justify-between mx-5 mt-5'>
                                 <h1 className='text-lg font-bold'>Transaction History</h1>
                                 <button className='text-base text-primary hover:text-lg'>view all</button>
