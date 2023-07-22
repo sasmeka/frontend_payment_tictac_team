@@ -13,6 +13,10 @@ import Verification from "./page/verification";
 import Createotp from "./page/create_otp";
 import Reset_password from "./page/reset_password";
 import Reset_change_password from "./page/reset_change_password"
+import AddPhone from "./page/addPhone";
+import ChangePassword from "./page/changePassword";
+import ChangePin from "./page/changePIN";
+import History from "./page/history";
 
 function Router() {
   const [success_message, setsuccess_message] = useState("");
@@ -50,6 +54,11 @@ function Router() {
 
                 <Route path="/Home" element={<Home />} />
                 <Route path="/personal-profile" element={<PersonalProfile />} />
+
+                <Route path="/history" element={<History />} />
+                <Route path="/add-phone" element={<AddPhone />} />
+                <Route path="/change-password" element={<ChangePassword />} />
+                <Route path="/change-pin" element={<ChangePin />} />
 
               </>
             )}
