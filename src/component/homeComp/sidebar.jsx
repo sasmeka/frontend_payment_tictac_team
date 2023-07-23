@@ -19,7 +19,7 @@ function sidebar() {
   return (
     <div className="row-span-4 bg-white auto-cols-min rounded-lg">
       <div className='flex flex-col gap-y-10 mt-10 mx-10 my-8'>
-        <Link to="#" className='flex items-center text-lg gap-x-3 hover:text-primary hover:font-bold '> <RxDashboard /> Dashboard</Link>
+        <Link to="/home" className='flex items-center text-lg gap-x-3 hover:text-primary hover:font-bold '> <RxDashboard /> Dashboard</Link>
         <Link to="#" className='flex items-center text-lg gap-x-3 hover:text-primary hover:font-bold'><LiaArrowUpSolid /> Transfer</Link>
         <Link to="#" className='flex items-center text-lg gap-x-3 hover:text-primary hover:font-bold'><AiOutlinePlus /> Top Up</Link>
         <Link to="#" className='flex items-center text-lg gap-x-3 hover:text-primary hover:font-bold'><MdPersonOutline /> Profile</Link>

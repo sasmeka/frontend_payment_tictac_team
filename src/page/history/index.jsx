@@ -1,18 +1,41 @@
 import React from 'react'
 import Header from '../../component/homeComp/header'
 import Footer from '../../component/homeComp/footer'
-import { RxDashboard } from 'react-icons/rx'
-import { LiaArrowUpSolid } from 'react-icons/lia'
-import { AiOutlinePlus } from 'react-icons/ai'
-import up from '../../assets/img/arrow-up.svg'
-import down from '../../assets/img/down.svg'
-import dummyData from '../../assets/img/graphic.svg'
-import { MdPersonOutline, MdLogout } from 'react-icons/md'
 import profile from '../../assets/img/Default_Profile.png'
 import Sidebar from '../../component/homeComp/sidebar'
 
+import authChecked from '../../helper/authCheck'
+import useApi from '../../helper/useApi'
+import { useState, useEffect } from 'react'
+
+import { Link, useNavigate } from 'react-router-dom'
+import { logout } from '../../store/reducer/user'
+import { useDispatch, useSelector } from "react-redux";
+
 
 function history() {
+    const navigates = useNavigate();
+    const dispatch = useDispatch()
+    const { data } = useSelector((s) => s.user)
+    console.log(data)
+    const api = useApi()
+
+    const [datatrans, setdatatrans] = useState([])
+
+    const getDataTransaction = async () => {
+        try {
+            const { data } = await api({ method: 'get', url: `transaction` })
+            setdatatrans(data.data)
+        } catch (error) {
+            // console.log(error.response.data)
+        }
+    }
+
+    useEffect(() => {
+        getDataTransaction()
+    }, [])
+
+
     return (
         <>
             <Header />
@@ -29,46 +52,39 @@ function history() {
                             </div>
                             <div className='text-sm text-gray-400 mx-5 mt-8'>This week</div>
                             <div className='flex flex-col gap-y-5 mt-5'>
-                                <div className='flex justify-between mx-5 mt-5'>
-                                    <div className='flex gap-x-3 items-center'>
-                                        <img className='w-14 h-14' src={profile} alt="" />
-                                        <div className='flex flex-col gap-x-2'>
-                                            <h2>Samuel Suhi</h2>
-                                            <h3 className='text-sm text-gray-400'>Transfer</h3>
-                                        </div>
-                                    </div>
-                                    <h3 className='text-green-500'>+Rp50.000</h3>
-                                </div>
-                                <div className='flex justify-between mx-5 mt-5'>
-                                    <div className='flex gap-x-3 items-center'>
-                                        <img className='w-14 h-14' src={profile} alt="" />
-                                        <div className='flex flex-col gap-x-2'>
-                                            <h2>Samuel Suhi</h2>
-                                            <h3 className='text-sm text-gray-400'>Subscription</h3>
-                                        </div>
-                                    </div>
-                                    <h3 className='text-red-500'>-Rp50.000</h3>
-                                </div>
-                                <div className='text-sm text-gray-400 mx-5 mt-10'>This month</div>
-                                <div className='flex justify-between mx-5 mt-5'>
-                                    <div className='flex gap-x-3 items-center'>
-                                        <img className='w-14 h-14' src={profile} alt="" />
-                                        <div className='flex flex-col gap-x-2'>
-                                            <h2>Samuel Suhi</h2>
-                                            <h3 className='text-sm text-gray-400'>Transfer</h3>
-                                        </div>
-                                    </div>
-                                    <h3 className='text-green-500'>+Rp50.000</h3>
-                                </div>
-                                <div className='flex justify-between mx-5 mt-5'>
-                                    <div className='flex gap-x-3 items-center'>
-                                        <img className='w-14 h-14' src={profile} alt="" />
-                                        <div className='flex flex-col gap-x-2'>
-                                            <h2>Samuel Suhi</h2>
-                                            <h3 className='text-sm text-gray-400'>Transfer</h3>
-                                        </div>
-                                    </div>
-                                    <h3 className='text-green-500'>+Rp50.000</h3>
+                                <div className='flex flex-col justify-between gap-y-3 mx-5 mt-1'>
+                                    {
+                                        data[0] ?
+                                            datatrans.length != 0 ? (
+                                                datatrans.map((v) => {
+                                                    return (
+                                                        v.user_data_sender[0].id_user == data[0].id_user ? (
+                                                            <div key={v.id_transaction} className='flex flex mt-5'>
+                                                                <img src={profile} alt="#" />
+                                                                <div>
+                                                                    <h3 className='text-sm text-gray-600'>{v.user_data_receiver[0].first_name + ' ' + v.user_data_receiver[0].last_name}</h3>
+                                                                    <h3 className='text-lg font-bold text-rose-600'>+Rp. {v.amount}</h3>
+                                                                </div>
+                                                            </div>
+                                                        ) : (
+                                                            <div key={v.id_transaction} className='flex flex mt-5'>
+                                                                <img src={profile} alt="#" />
+                                                                <div>
+                                                                    <h3 className='text-sm text-gray-600'>{v.user_data_sender[0].first_name + ' ' + v.user_data_sender[0].last_name}</h3>
+                                                                    <h3 className='text-lg text-green-600 font-bold'>-Rp. {v.amount}</h3>
+                                                                </div>
+                                                            </div>
+                                                        )
+                                                    )
+                                                })
+                                            ) : (
+                                                <div className='flex border shadow flex mt-5'>
+                                                    <div>
+                                                        <h3 className='text-sm text-gray-600'>Data not found.</h3>
+                                                    </div>
+                                                </div>
+                                            ) : ''
+                                    }
                                 </div>
                             </div>
 
@@ -82,4 +98,4 @@ function history() {
     )
 }
 
-export default history
+export default authChecked(true, history, ['user']) 
