@@ -28,13 +28,10 @@ function addPhone() {
                 }
             })
             setsuccess_message(data.message)
-            console.log(data.message)
         } catch (error) {
             seterror_message(error.response.data.message)
-            console.log(error.response.data.message)
         }
     }
-    console.log(phone)
 
     useEffect(() => {
         setTimeout(() => {
@@ -52,7 +49,7 @@ function addPhone() {
                         <div className="hidden lg:flex row-span-4 w-full bg-white auto-cols-min rounded-lg">
                             <Sidebar />
                         </div>
-                        <div class="max-h-7xl row-span-4 col-span-10 bg-white h-full rounded-lg overflow-auto">
+                        <div class="max-h-7xl row-span-4 col-span-10 bg-white h-screen rounded-lg overflow-auto">
                             <div className='flex flex-col gap-y-10 justify-between md:text-start text-center p-10 mt-5'>
                                 <h1 className='text-lg font-bold'>Add Phone Number</h1>
                                 <p className='text-sm text-gray-400'>
@@ -60,12 +57,12 @@ function addPhone() {
                                 </p>
                             </div>
                             <div className='m-2'>
-                                <div className='flex justify-start w-96 pb-1 mx-auto border border-b-2 border-x-0 border-t-0 mt-20'>
+                                <div className='flex justify-start w-96 pb-1 mx-auto'>
                                     <span className='flex gap-x-2 items-center'><BsTelephone/></span>
-                                    <input onChange={(e) => setPhone(e.target.value)} className='w-96 h-12 pl-5' placeholder='Enter your phone number' type="tel" />
+                                    <input onChange={(e) => setPhone(e.target.value)} className={(error_message != '' ? 'border-red-400' : phone == '' ? 'border-opacity-50 border-[#A9A9A9]' : 'border-[#6379F4]') + " focus:outline-none h-12 md:h-14 w-full border-b-[2px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder='Enter your phone number' type="tel" />
                                 </div>
                                 <div className='mx-auto flex justify-center '>
-                                    <button onClick={updatePhone} className='bg-gray-200 text-gray-500 w-96 mt-16 mb-16 h-12 rounded-lg hover:bg-gray-600 hover:text-white'>Add Phone Number</button>
+                                    <button onClick={updatePhone} className={(phone != '' ? 'bg-primary' : 'bg-gray-600') + " mt-10 h-12 md:h-14 w-96 rounded-2xl text-black font-semibold tracking-wider text-white font-semibold tracking-wider"}>Add Phone Number</button>
                                 </div>
                             </div>
                         </div>

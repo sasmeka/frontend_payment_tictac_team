@@ -91,20 +91,26 @@ function home() {
                                                 datatrans.map((v) => {
                                                     return (
                                                         v.user_data_sender[0].id_user == data[0].id_user ? (
-                                                            <div key={v.id_transaction} className='flex flex mt-5'>
-                                                                <img src={up} alt="#" />
-                                                                <div>
-                                                                    <h3 className='text-sm text-gray-600'>{v.user_data_receiver[0].first_name + ' ' + v.user_data_receiver[0].last_name}</h3>
-                                                                    <h3 className='text-lg font-bold text-rose-600'>+Rp. {v.amount}</h3>
+                                                            <div key={v.id_transaction} className='flex justify-between mt-5'>
+                                                                <div className='flex gap-x-5 items-center'>
+                                                                    <img className="w-12 h-12 rounded-lg" src={v.user_data_receiver[0].image} alt="#" />
+                                                                    <div className='flex flex-col gap-y-2'>
+                                                                        <h3 className='text-sm text-gray-600'>{v.user_data_receiver[0].first_name + ' ' + v.user_data_receiver[0].last_name}</h3>
+                                                                        <h3 className='text-xs text-gray-400'>{v.notes ? (v.notes):"no notes"}</h3>
+                                                                    </div>
                                                                 </div>
+                                                                <h3 className='text-lg font-bold text-rose-600'>+Rp. {v.amount}</h3>
                                                             </div>
                                                         ) : (
-                                                            <div key={v.id_transaction} className='flex flex mt-5'>
-                                                                <img src={down} alt="#" />
-                                                                <div>
-                                                                    <h3 className='text-sm text-gray-600'>{v.user_data_sender[0].first_name + ' ' + v.user_data_sender[0].last_name}</h3>
-                                                                    <h3 className='text-lg text-green-600 font-bold'>-Rp. {v.amount}</h3>
+                                                            <div key={v.id_transaction} className='flex justify-between mt-5'>
+                                                                <div className='flex gap-x-5 items-center'>
+                                                                    <img className="w-12 h-12 rounded-lg" src={v.user_data_sender[0].image} alt="#" />
+                                                                    <div className='flex flex-col gap-y-2'>
+                                                                        <h3 className='text-sm text-gray-600'>{v.user_data_sender[0].first_name + ' ' + v.user_data_sender[0].last_name}</h3>
+                                                                        <h3 className='text-xs text-gray-400'>{v.notes ? (v.notes):"no notes"}</h3>
+                                                                    </div>
                                                                 </div>
+                                                                <h3 className='text-lg font-bold text-green-600'>+Rp. {v.amount}</h3>
                                                             </div>
                                                         )
                                                     )
