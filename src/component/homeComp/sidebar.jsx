@@ -19,10 +19,10 @@ function sidebar() {
   return (
     <div className="row-span-4 bg-white auto-cols-min rounded-lg">
       <div className='flex flex-col gap-y-10 mt-10 mx-10 my-8'>
-        <Link to="/home" className='flex items-center text-lg gap-x-3 hover:text-primary hover:font-bold '> <RxDashboard /> Dashboard</Link>
-        <Link to="#" className='flex items-center text-lg gap-x-3 hover:text-primary hover:font-bold'><LiaArrowUpSolid /> Transfer</Link>
+        <Link to="/Home" className='flex items-center text-lg gap-x-3 hover:text-primary hover:font-bold '> <RxDashboard /> Dashboard</Link>
+        <Link to="/transfer" className='flex items-center text-lg gap-x-3 hover:text-primary hover:font-bold'><LiaArrowUpSolid /> Transfer</Link>
         <Link to="#" className='flex items-center text-lg gap-x-3 hover:text-primary hover:font-bold'><AiOutlinePlus /> Top Up</Link>
-        <Link to="#" className='flex items-center text-lg gap-x-3 hover:text-primary hover:font-bold'><MdPersonOutline /> Profile</Link>
+        <Link to="/profile" className='flex items-center text-lg gap-x-3 hover:text-primary hover:font-bold'><MdPersonOutline /> Profile</Link>
         <div className='mt-96'>
           <button onClick={btnlogout} className='text-lg hover:text-primary flex items-center gap-x-3 hover:font-bold'><MdLogout /> Logout</button>
         </div>
