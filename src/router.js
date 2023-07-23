@@ -17,6 +17,8 @@ import AddPhone from "./page/addPhone";
 import ChangePassword from "./page/changePassword";
 import ChangePin from "./page/changePIN";
 import History from "./page/history";
+import Profile from "./page/profile";
+import Transfer from "./page/transfer";
 
 function Router() {
   const [success_message, setsuccess_message] = useState("");
@@ -53,7 +55,9 @@ function Router() {
                 <Route path="/reset-change-password" element={<Reset_change_password />} />
 
                 <Route path="/Home" element={<Home />} />
-                <Route path="/personal-profile" element={<PersonalProfile />} />
+                <Route path="/personal-info" element={<PersonalProfile />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/transfer" element={<Transfer />} />
 
                 <Route path="/history" element={<History />} />
                 <Route path="/add-phone" element={<AddPhone />} />

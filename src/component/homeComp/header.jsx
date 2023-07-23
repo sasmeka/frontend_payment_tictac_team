@@ -43,7 +43,7 @@ function header() {
     }, [])
 
     return (
-        <header className='bg-gray-200'>
+        <header>
             <div className='rounded-b-3xl border bg-white w-full h-auto'>
                 <div className='flex justify-between max-w-7xl mx-auto p-5 items-center'>
                     <div className='lg:flex hidden'>
