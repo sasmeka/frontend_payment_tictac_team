@@ -7,6 +7,7 @@ import useApi from '../../helper/useApi'
 
 import ErrorContext from '../../helper/context_error'
 import SuccessContext from '../../helper/context_success'
+import authChecked from '../../helper/authCheck'
 
 
 function addPhone() {
@@ -75,4 +76,4 @@ function addPhone() {
     )
 }
 
-export default addPhone
+export default authChecked(true, addPhone, ['user'])

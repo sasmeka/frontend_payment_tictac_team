@@ -26,6 +26,12 @@ function changePassword() {
 
     const [pass, setPass] = useState('')
     const [newPass, setNewpass] = useState('')
+    const [passtrans, setpasstrans] = useState('')
+
+    const [cpass, setcpass] = useState(true)
+    const click_pass = () => {
+        setcpass(cpass == true ? false : true)
+    }
 
     const updatePassword = async (e) => {
         e.preventDefault()
@@ -46,6 +52,7 @@ function changePassword() {
             console.log(error.response.data.message)
         }
     }
+
 
     useEffect(() => {
         setTimeout(() => {
@@ -71,23 +78,29 @@ function changePassword() {
                                 </p>
                             </div>
                             <div className=''>
-                                <div className='flex justify-start w-96 pb-1 mx-auto border border-b-2 border-x-0 border-t-0 mt-14'>
-                                    <span className='flex gap-x-2 items-center'><GoLock/></span>
-                                    <input onChange={(e) => setPass(e.target.value)} className='w-96 h-12 pl-5' placeholder='Type your current password' type="password" />
-                                    <span className='flex gap-x-2 items-center'><BsEyeSlash className='w-5 h-5'/></span>
+                                <div className="flex flex-col mb-10">
+                                    <div className="relative w-96 items-center mx-auto">
+                                        <i className={(error_message != '' ? 'text-red-400' : pass == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-lock absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
+                                        <input type={cpass ? "password" : "text"} onChange={(e) => setPass(e.target.value)} className={(error_message != '' ? 'border-red-400' : pass == '' ? 'border-opacity-50 border-[#A9A9A9]' : 'border-[#6379F4]') + " focus:outline-none h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your password" />
+                                        <Link onClick={click_pass}><i className="fa fa-eye absolute top-4 md:top-[1.1rem] right-3 text-[#A0A3BD]" aria-hidden="true"></i></Link>
+                                    </div>
                                 </div>
-                                <div className='flex justify-start w-96 pb-1 mx-auto border border-b-2 border-x-0 border-t-0 mt-16'>
-                                    <span className='flex gap-x-2 items-center'><GoLock/></span>
-                                    <input className='w-96 h-12 pl-5' placeholder='type your new password' type="password" />
-                                    <span className='flex gap-x-2 items-center'><BsEyeSlash className='w-5 h-5'/></span>
+                                <div className="flex flex-col mb-10">
+                                    <div className="relative w-96 items-center mx-auto">
+                                        <i className={(error_message != '' ? 'text-red-400' : passtrans == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-lock absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
+                                        <input type={cpass ? "password" : "text"} onChange={(e) => setpasstrans(e.target.value)} className={(error_message != '' ? 'border-red-400' : passtrans === ''? 'border-opacity-50 border-[#A9A9A9]' : 'border-[#6379F4]') + " focus:outline-none h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your password" />
+                                        <Link onClick={click_pass}><i className="fa fa-eye absolute top-4 md:top-[1.1rem] right-3 text-[#A0A3BD]" aria-hidden="true"></i></Link>
+                                    </div>
                                 </div>
-                                <div className='flex justify-start w-96 pb-1 mx-auto border border-b-2 border-x-0 border-t-0 mt-16'>
-                                    <span className='flex gap-x-2 items-center'><GoLock/></span>
-                                    <input onChange={(e) => setNewpass(e.target.value)} className='w-96 h-12 pl-5' placeholder='Retype your new password' type="password" />
-                                    <span className='flex gap-x-2 items-center'><BsEyeSlash className='w-5 h-5'/></span>
+                                <div className="flex flex-col mb-10">
+                                    <div className="relative w-96 items-center mx-auto">
+                                        <i className={(error_message != '' ? 'text-red-400' : newPass == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-lock absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
+                                        <input type={cpass ? "password" : "text"} onChange={(e) => setNewpass(e.target.value)} className={(error_message !== '' ? 'border-red-400' : newPass === '' ? 'border-opacity-50 border-[#A9A9A9]' : 'border-[#6379F4]') + " focus:outline-none h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your password" />
+                                        <Link onClick={click_pass}><i className="fa fa-eye absolute top-4 md:top-[1.1rem] right-3 text-[#A0A3BD]" aria-hidden="true"></i></Link>
+                                    </div>
                                 </div>
                                 <div className='mx-auto flex justify-center '>
-                                    <button onClick={updatePassword} className='bg-gray-200 text-gray-500 w-96 mt-16 h-12 mb-16 rounded-lg hover:bg-gray-600 hover:text-white'>Change Password</button>
+                                    <button onClick={updatePassword} className={(pass !== '' && newPass != '' && passtrans !== '' ? 'bg-primary' : 'bg-gray-600') + " mt-10 h-12 md:h-14 w-96 rounded-2xl text-black font-semibold tracking-wider text-white font-semibold tracking-wider"}>Change Password</button>
                                 </div>
                             </div>
                         </div>
