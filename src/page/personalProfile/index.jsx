@@ -1,11 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Header from "../../component/homeComp/header";
+import Footer from "../../component/homeComp/footer";
+import Sidebar from "../../component/homeComp/sidebar";
 
 function PersonalProfile() {
     return (
         <>
-        <div>
-            <div className="w-full bg-white shadow-md rounded-lg my-10 px-5 py-10">
+        <Header />
+        <div className="flex gap-10 px-[150px] justify-center">
+            <div className="hidden lg:flex bg-white rounded-lg my-10 shadow-sm rounded-[15px]">
+                <Sidebar />
+            </div>
+            <div className="w-full bg-white shadow-sm rounded-[15px] my-10 px-10 py-10">
                 <h1 className="font-bold">Personal Information</h1>
                 <p className="w-96 mt-10 text-gray-400 text-sm">We got your personal information from the sign up proccess. If you want to make changes on your information, contact our support.</p>
                 <div className="flex flex-col gap-3">
@@ -31,6 +38,7 @@ function PersonalProfile() {
                 </div>
             </div>
         </div>
+        <Footer />
         </>
     )
 }
