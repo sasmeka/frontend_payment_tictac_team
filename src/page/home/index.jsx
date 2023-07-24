@@ -60,12 +60,12 @@ function home() {
                             </div>
                             <div className='lg:flex hidden flex-col gap-y-3'>
                                 <Link to='/transfer'> <button className='flex text-white border items-center gap-x-3 w-28 justify-center hover:bg-white hover:text-primary rounded-lg h-12 mx-auto'><LiaArrowUpSolid /> Transfer</button></Link>
-                                <Link to='/#'><button className='flex text-white border items-center gap-x-3 w-28 justify-center hover:bg-white hover:text-primary rounded-lg h-12 mx-auto'><AiOutlinePlus /> Top Up</button></Link>
+                                <Link to='/top_up'><button className='flex text-white border items-center gap-x-3 w-28 justify-center hover:bg-white hover:text-primary rounded-lg h-12 mx-auto'><AiOutlinePlus /> Top Up</button></Link>
                             </div>
                         </div>
                         <div className='lg:hidden flex justify-around gap-y-3'>
                             <Link to='/transfer'><button className='flex text-white border items-center gap-x-3 w-40 justify-center bg-gray-400 hover:bg-primary hover:text-white rounded-lg h-12 mx-auto'><LiaArrowUpSolid /> Transfer</button></Link>
-                            <Link to='/#'><button className='flex text-white border items-center gap-x-3 w-40 justify-center bg-gray-400 hover:bg-primary hover:text-white rounded-lg h-12 mx-auto'><AiOutlinePlus /> Top Up</button></Link>
+                            <Link to='/top_up'><button className='flex text-white border items-center gap-x-3 w-40 justify-center bg-gray-400 hover:bg-primary hover:text-white rounded-lg h-12 mx-auto'><AiOutlinePlus /> Top Up</button></Link>
                         </div>
                         <div className="lg:flex flex-col hidden row-span-3 bg-white rounded-lg">
                             <div className='flex justify-between p-4 mt-5 mx-5'>
