@@ -136,7 +136,7 @@ function header() {
                         <label tabIndex={0} className="btn m-1"><GiHamburgerMenu className='lg:hidden flex w-6 h-6' /></label>
                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link to='/home'>Dashboad</Link></li>
-                            <li><Link to='#'>Profile</Link></li>
+                            <li><Link to='/profile'>Profile</Link></li>
                             <li><Link onClick={() => { dispatch(logout()), navigates('/sign-in') }}>Logout</Link></li>
                         </ul>
                     </div>
