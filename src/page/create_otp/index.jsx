@@ -96,7 +96,7 @@ function Create_otp() {
                                 </div>
                                 {
                                     error_message != '' ? (
-                                        <div className="text-red-600 tracking-wide mb-3 text-sm">{error_message}</div>
+                                        <div className="text-red-600 text-center tracking-wide mb-3 text-sm">{error_message}</div>
                                     ) : ''
                                 }
                                 <button onClick={submintOtp} type="submit" className={(otp.join("").length === 6 ? 'bg-[#6379F4]' : 'bg-[#e7e7e7]') + " mt-5 h-12 md:h-14 w-full rounded-2xl text-black font-semibold tracking-wider text-white font-semibold tracking-wider mt-10"}>Confirm</button>
