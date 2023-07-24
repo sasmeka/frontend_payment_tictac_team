@@ -19,6 +19,8 @@ import ChangePin from "./page/changePIN";
 import History from "./page/history";
 import Profile from "./page/profile";
 import Transfer from "./page/transfer";
+import Top_up from "./page/top_up";
+import Manage_phone from "./page/manage_phone_number";
 
 function Router() {
   const [success_message, setsuccess_message] = useState("");
@@ -63,6 +65,8 @@ function Router() {
                 <Route path="/add-phone" element={<AddPhone />} />
                 <Route path="/change-password" element={<ChangePassword />} />
                 <Route path="/change-pin" element={<ChangePin />} />
+                <Route path="/top_up" element={<Top_up />} />
+                <Route path="/manage_phone" element={<Manage_phone />} />
 
               </>
             )}
