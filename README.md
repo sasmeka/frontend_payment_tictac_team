@@ -151,6 +151,6 @@ Project Link: [https://github.com/sasmeka/frontend_wallet_tictac_team](https://g
 [nodejs-url]: https://nodejs.org/
 [react.js]: https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white
 [react-url]: https://react.dev/
-[product-screenshot1]: src/assets/screenshot/Landing_Page.png
-[product-screenshot2]: src/assets/screenshot/Sign-In.png
-[product-screenshot3]: src/assets/screenshot/Home.png
+[product-screenshot1]: src/assets/screenshot/Landing_Page.PNG
+[product-screenshot2]: src/assets/screenshot/Sign-In.PNG
+[product-screenshot3]: src/assets/screenshot/Home.PNG
