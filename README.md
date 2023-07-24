@@ -112,6 +112,18 @@ This project worker can follow the steps below:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+<!-- USAGE EXAMPLES -->
+## Screenshot
+
+1. Landing Page
+[![Landing-Page][product-screenshot1]](https://github.com/sasmeka/frontend_wallet_tictac_team)
+2. Sign-In
+[![Sign-In][product-screenshot2]](https://github.com/sasmeka/frontend_wallet_tictac_team)
+3. Home
+[![Home][product-screenshot3]](https://github.com/sasmeka/frontend_wallet_tictac_team)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- CONTACT -->
 ## Contact
 
@@ -139,3 +151,6 @@ Project Link: [https://github.com/sasmeka/frontend_wallet_tictac_team](https://g
 [nodejs-url]: https://nodejs.org/
 [react.js]: https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white
 [react-url]: https://react.dev/
+[product-screenshot1]: src/assets/screenshot/Landing_Page.png
+[product-screenshot2]: src/assets/screenshot/Sign-In.png
+[product-screenshot3]: src/assets/screenshot/Home.png

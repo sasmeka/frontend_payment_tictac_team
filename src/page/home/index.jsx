@@ -84,12 +84,12 @@ function home() {
                                 <div>
                                     <img src={down} alt="" />
                                     <h2>Income</h2>
-                                    <h2>Rp. {new Intl.NumberFormat('en-DE').format(receive)}</h2>
+                                    <h2 className='font-bold text-xl'>Rp. {new Intl.NumberFormat('en-DE').format(receive)}</h2>
                                 </div>
                                 <div>
                                     <img src={up} alt="" />
                                     <h2>Expense</h2>
-                                    <h2>Rp. {new Intl.NumberFormat('en-DE').format(send)}</h2>
+                                    <h2 className='font-bold text-xl'>Rp. {new Intl.NumberFormat('en-DE').format(send)}</h2>
                                 </div>
                             </div>
                             <img src={dummyData} alt="" className='mt-20 pb-5 flex px-5 items-center mx-auto' />

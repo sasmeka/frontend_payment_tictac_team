@@ -65,7 +65,7 @@ function addPhone() {
                         <div className="hidden lg:flex row-span-4 w-full bg-white auto-cols-min rounded-lg">
                             <Sidebar />
                         </div>
-                        <div className="max-h-7xl row-span-4 col-span-10 bg-white h-screen rounded-lg overflow-auto">
+                        <div class="max-h-7xl row-span-4 col-span-10 bg-white rounded-lg overflow-auto">
                             <div className='flex flex-col gap-y-10 justify-between md:text-start text-center p-10 mt-5'>
                                 <h1 className='text-lg font-bold'>Add Phone Number</h1>
                                 <p className='text-sm text-gray-400'>
