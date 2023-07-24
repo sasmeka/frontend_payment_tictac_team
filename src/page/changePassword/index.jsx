@@ -119,7 +119,7 @@ function changePassword() {
                                 </div>
                                 {
                                     error_message != '' ? (
-                                        <div className="text-red-400 tracking-wide mb-3 text-sm">{error_message}</div>
+                                        <div className="text-red-400 text-center tracking-wide mb-3 text-sm">{error_message}</div>
                                     ) : ''
                                 }
                                 <div className='mx-auto flex justify-center '>
