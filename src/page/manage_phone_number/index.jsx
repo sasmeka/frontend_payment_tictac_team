@@ -34,8 +34,17 @@ function Manage_phone() {
                             <Sidebar />
                         </div>
                         <div class="row-span-4 col-span-9 bg-white md:h-full h-screen rounded-lg overflow-auto pb-10">
-                            <div className='flex justify-between mx-5 mt-5 mb-10'>
-                                <h1 className='text-lg font-bold'>How To Top Up</h1>
+                            <div className='flex justify-between mx-5 mt-5 mb-10 ml-5'>
+                                <h1 className='text-lg font-bold'>Manage Phone Number</h1>
+                            </div>
+                            <div className='flex justify-between mt-5 ml-5'>
+                                <p className="text-[#AAAAAA] text-md md:text-lg tracking-wide ">
+                                    You can only delete the phone number and then</p>
+                                
+                            </div>
+                            <div className='flex justify-between ml-6'>
+                            <p className="text-[#AAAAAA] text-md md:text-lg tracking-wide mb-5">
+                                    you must add another phone number.</p>
                             </div>
                             <div className='grid gap-y-4 mx-10'>
                                 {/* <div className="flex flex-shrink-0 p-3 w-1/3 h-1/3 sm:w-auto rounded-lg bg-slate-100"> */}
