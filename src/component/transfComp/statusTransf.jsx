@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Cards from "../transfComp/cardsContact";
+import moment from "moment/moment";
 
 function StatusTransf({ name, image, phone, amount, notes, balance_left, date_select, status_transfer, transferFailed }) {
     const [transferStatus, setTransferStatus] = useState(status_transfer ? 'success' : "failed");
@@ -57,7 +58,7 @@ function StatusTransf({ name, image, phone, amount, notes, balance_left, date_se
                         </div>
                         <div className="w-full bg-white shadow-md rounded-lg p-5 flex flex-col">
                             <label className="text-gray-400 text-sm">Date & Time</label>
-                            <h1 className="font-medium text-md">{date_select}</h1>
+                            <h1 className="font-medium text-md">{moment().utc(date_select).format('MMMM D, YYYY [-] H:mm')}</h1>
                         </div>
                         <div className="w-full bg-white shadow-md rounded-lg p-5 flex flex-col">
                             <label className="text-gray-400 text-sm">Notes</label>
