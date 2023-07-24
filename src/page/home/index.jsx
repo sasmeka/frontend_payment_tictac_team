@@ -57,7 +57,7 @@ function home() {
             <div className='bg-gray-200'>
                 <div className="p-5 bg-gray-200 max-w-7xl mx-auto">
                     <div className="lg:grid flex flex-col grid-rows-4 grid-flow-col gap-4">
-                        <div className="hidden lg:flex row-span-4 auto-cols-min bg-white rounded-lg">
+                        <div className="hidden lg:grid row-span-4 grid-rows-4 w-full bg-white auto-cols-min rounded-lg">
                             <Sidebar />
                         </div>
                         <div className="col-span-2 bg-primary h-40 flex items-center rounded-lg justify-between px-10 py-5">

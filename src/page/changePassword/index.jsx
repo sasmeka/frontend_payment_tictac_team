@@ -85,7 +85,7 @@ function changePassword() {
             <div className='bg-gray-200'>
                 <div className="p-5 bg-gray-200 max-w-7xl mx-auto">
                     <div className="lg:grid flex flex-col grid-rows-4 grid-flow-col gap-4">
-                        <div className="hidden lg:flex row-span-4 w-full bg-white auto-cols-min rounded-lg">
+                        <div className="hidden lg:grid row-span-4 grid-rows-4 w-full bg-white auto-cols-min rounded-lg">
                             <Sidebar />
                         </div>
                         <div class="max-h-7xl row-span-4 col-span-10 bg-white rounded-lg overflow-auto">

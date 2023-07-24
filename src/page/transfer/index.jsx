@@ -27,7 +27,7 @@ function Transfer() {
     const [datauser, setdatauser] = useState([])
     const [datauser_meta, setdatauser_meta] = useState([])
     const [datauser_page, setdatauser_page] = useState(1)
-
+    const [search, setsearch] = useState('')
     const [selectedid_user, setselectedid_user] = useState('')
     const [selectedname, setselectedname] = useState('')
     const [selectedphone, setselectedphone] = useState('')
@@ -41,7 +41,7 @@ function Transfer() {
 
     const getDataUser = async () => {
         try {
-            const { data } = await api({ method: 'get', url: `user?limit=1&page=${datauser_page}` })
+            const { data } = await api({ method: 'get', url: `user?limit=2&page=${datauser_page}&search=${search}` })
             setdatauser(data.data)
             setdatauser_meta(data.meta)
         } catch (error) {
@@ -61,7 +61,7 @@ function Transfer() {
 
     useEffect(() => {
         getDataUser()
-    }, [datauser_page])
+    }, [datauser_page, search])
 
     useEffect(() => {
         setTimeout(() => {
@@ -75,13 +75,13 @@ function Transfer() {
             <div className='bg-gray-200'>
                 <div className="p-5 bg-gray-200 max-w-7xl mx-auto">
                     <div className="lg:grid flex flex-col grid-rows-4 grid-flow-col gap-4">
-                        <div className="hidden lg:flex row-span-4 col-span-2 bg-white rounded-lg">
+                        <div className="hidden lg:grid row-span-4 grid-rows-4 w-full bg-white auto-cols-min rounded-lg">
                             <Sidebar />
                         </div>
                         <div className="row-span-4 col-span-10 bg-white md:h-full h-screen rounded-lg overflow-auto pb-10">
                             <div className={(selectedid_user != '' ? 'hidden' : '') + " m-10"}>
                                 <h1 className="text-sm md:text-md font-bold">Search Receiver</h1>
-                                <input type="search" name="search" id="" placeholder="Search receiver here" className="bg-gray-200 w-full rounded-[5px] p-2 text-xs placeholder:text-xs my-3" />
+                                <input type="search" name="search" id="" onChange={(e) => setsearch(e.target.value)} placeholder="Search receiver here" className="bg-gray-200 w-full rounded-[5px] p-2 text-xs placeholder:text-xs my-3" />
                                 <div className="flex flex-col gap-3">
                                     {
                                         data[0] ?
