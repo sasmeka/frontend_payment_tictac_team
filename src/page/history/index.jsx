@@ -36,7 +36,6 @@ function history() {
             const { data } = await api({ method: 'get', url: `transaction?show_data_by=month&limit=3&page=${datatrans_page}` })
             setdatatrans(data.data)
             setdatatrans_meta(data.meta)
-            console.log(data.meta)
         } catch (error) {
             // console.log(error.response.data)
         }
