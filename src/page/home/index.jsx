@@ -24,6 +24,8 @@ function home() {
     const api = useApi()
 
     const [datatrans, setdatatrans] = useState([])
+    const [receive, setreceive] = useState(0)
+    const [send, setsend] = useState(0)
 
     const getDataTransaction = async () => {
         try {
@@ -33,10 +35,20 @@ function home() {
             // console.log(error.response.data)
         }
     }
+    const getDataTotal = async () => {
+        try {
+            const { data } = await api({ method: 'get', url: `/transaction/receiver_send` })
+            setreceive(data.data[0].total_receiver)
+            setsend(data.data[0].total_send)
+        } catch (error) {
+            // console.log(error.response.data)
+        }
+    }
 
     useEffect(() => {
         document.title = 'Home';
         getDataTransaction()
+        getDataTotal()
     }, [])
 
     return (
@@ -51,7 +63,7 @@ function home() {
                         <div className="col-span-2 bg-primary h-40 flex items-center rounded-lg justify-between px-10 py-5">
                             <div className='flex flex-col gap-y-3'>
                                 <h2 className='text-lg text-gray-300 mt-2'>Balance</h2>
-                                <h1 className='text-4xl text-white font-bold'>Rp.{data[0] ? data[0].balance : ""}</h1>
+                                <h1 className='text-4xl text-white font-bold'>Rp. {data[0] ? new Intl.NumberFormat('en-DE').format(data[0].balance) : ""}</h1>
                                 {data[0] ? data[0].phone === '' ? (
                                     <h3 className='text-lg text-gray-300'>-</h3>
                                 ) : (
@@ -72,12 +84,12 @@ function home() {
                                 <div>
                                     <img src={down} alt="" />
                                     <h2>Income</h2>
-                                    <h2>Rp2.120.000</h2>
+                                    <h2>Rp. {new Intl.NumberFormat('en-DE').format(receive)}</h2>
                                 </div>
                                 <div>
                                     <img src={up} alt="" />
                                     <h2>Expense</h2>
-                                    <h2>Rp1.560.000</h2>
+                                    <h2>Rp. {new Intl.NumberFormat('en-DE').format(send)}</h2>
                                 </div>
                             </div>
                             <img src={dummyData} alt="" className='mt-20 pb-5 flex px-5 items-center mx-auto' />
@@ -103,7 +115,7 @@ function home() {
                                                                         <h3 className='text-xs text-gray-400'>Transfer to</h3>
                                                                     </div>
                                                                 </div>
-                                                                <h3 className='text-md font-semibold text-rose-600'>-Rp. {v.amount}</h3>
+                                                                <h3 className='text-md font-semibold text-rose-600'>-Rp. {new Intl.NumberFormat('en-DE').format(v.amount)}</h3>
                                                             </div>
                                                         ) : (
                                                             <div key={v.id_transaction} className='flex justify-between mt-8'>
@@ -114,7 +126,7 @@ function home() {
                                                                         <h3 className='text-xs text-gray-400'>Transfer from</h3>
                                                                     </div>
                                                                 </div>
-                                                                <h3 className='text-md font-semibold text-green-600'>+Rp. {v.amount}</h3>
+                                                                <h3 className='text-md font-semibold text-green-600'>+Rp. {new Intl.NumberFormat('en-DE').format(v.amount)}</h3>
                                                             </div>
                                                         )
                                                     )

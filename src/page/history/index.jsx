@@ -69,7 +69,7 @@ function history() {
         getDataTransaction()
         getDataTransactionday()
         getDataTransactionweek()
-    }, [datatrans_page])
+    }, [datatrans_page, datatransday_page, datatransweek_page])
 
 
     return (
@@ -81,7 +81,7 @@ function history() {
                         <div className="hidden lg:flex row-span-4 w-full bg-white auto-cols-min rounded-lg">
                             <Sidebar />
                         </div>
-                        <div class="row-span-4 col-span-10 bg-white md:h-full h-screen rounded-lg overflow-auto ">
+                        <div className="row-span-4 col-span-10 bg-white md:h-full h-screen rounded-lg overflow-auto ">
                             <div className='flex justify-between mx-5 mt-5'>
                                 <h1 className='text-lg font-bold'>Transaction History</h1>
                             </div>
@@ -104,7 +104,7 @@ function history() {
                                                                                 <h3 className='text-xs text-gray-400'>Transfer to</h3>
                                                                             </div>
                                                                         </div>
-                                                                        <h3 className='text-sm font-semibold text-rose-600'>-Rp. {v.amount}</h3>
+                                                                        <h3 className='text-sm font-semibold text-rose-600'>-Rp. {new Intl.NumberFormat('en-DE').format(v.amount)}</h3>
                                                                     </div>
                                                                 ) : (
                                                                     <div key={v.id_transaction} className='flex justify-between mt-5'>
@@ -115,7 +115,7 @@ function history() {
                                                                                 <h3 className='text-xs text-gray-400'>Transfer from</h3>
                                                                             </div>
                                                                         </div>
-                                                                        <h3 className='text-sm font-semibold text-green-600'>+Rp. {v.amount}</h3>
+                                                                        <h3 className='text-sm font-semibold text-green-600'>+Rp. {new Intl.NumberFormat('en-DE').format(v.amount)}</h3>
                                                                     </div>
                                                                 )
                                                             )
@@ -160,7 +160,7 @@ function history() {
                                                                                 <h3 className='text-xs text-gray-400'>Transfer to</h3>
                                                                             </div>
                                                                         </div>
-                                                                        <h3 className='text-sm font-semibold text-rose-600'>-Rp. {v.amount}</h3>
+                                                                        <h3 className='text-sm font-semibold text-rose-600'>-Rp. {new Intl.NumberFormat('en-DE').format(v.amount)}</h3>
                                                                     </div>
                                                                 ) : (
                                                                     <div key={v.id_transaction} className='flex justify-between mt-5'>
@@ -171,7 +171,7 @@ function history() {
                                                                                 <h3 className='text-xs text-gray-400'>Transfer from</h3>
                                                                             </div>
                                                                         </div>
-                                                                        <h3 className='text-sm font-semibold text-green-600'>+Rp. {v.amount}</h3>
+                                                                        <h3 className='text-sm font-semibold text-green-600'>+Rp. {new Intl.NumberFormat('en-DE').format(v.amount)}</h3>
                                                                     </div>
                                                                 )
                                                             )
@@ -216,7 +216,7 @@ function history() {
                                                                                 <h3 className='text-xs text-gray-400'>Transfer to</h3>
                                                                             </div>
                                                                         </div>
-                                                                        <h3 className='text-sm font-semibold text-rose-600'>-Rp. {v.amount}</h3>
+                                                                        <h3 className='text-sm font-semibold text-rose-600'>-Rp. {new Intl.NumberFormat('en-DE').format(v.amount)}</h3>
                                                                     </div>
                                                                 ) : (
                                                                     <div key={v.id_transaction} className='flex justify-between mt-5'>
@@ -227,7 +227,7 @@ function history() {
                                                                                 <h3 className='text-xs text-gray-400'>Transfer from</h3>
                                                                             </div>
                                                                         </div>
-                                                                        <h3 className='text-sm font-semibold text-green-600'>+Rp. {v.amount}</h3>
+                                                                        <h3 className='text-sm font-semibold text-green-600'>+Rp. {new Intl.NumberFormat('en-DE').format(v.amount)}</h3>
                                                                     </div>
                                                                 )
                                                             )

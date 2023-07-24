@@ -117,11 +117,11 @@ function Confirmation({ id, name, image, phone, amount, notes, balance_left, cre
           <div className="flex flex-col gap-3">
             <div className="w-full bg-white shadow-md rounded-lg p-5 flex flex-col mb-5">
               <label className="text-gray-400 text-sm">Amount</label>
-              <h1 className="font-medium text-md">Rp. {amount}</h1>
+              <h1 className="font-medium text-md">Rp. {new Intl.NumberFormat('en-DE').format(amount)}</h1>
             </div>
             <div className="w-full bg-white shadow-md rounded-lg p-5 flex flex-col mb-5">
               <label className="text-gray-400 text-sm">Balance Left</label>
-              <h1 className="font-medium text-md">Rp. {balance_left}</h1>
+              <h1 className="font-medium text-md">Rp. {new Intl.NumberFormat('en-DE').format(balance_left)}</h1>
             </div>
             <div className="w-full bg-white shadow-md rounded-lg p-5 flex flex-col mb-5">
               <label className="text-gray-400 text-sm">Date & Time</label>

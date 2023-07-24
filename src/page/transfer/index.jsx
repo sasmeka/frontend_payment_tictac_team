@@ -137,7 +137,7 @@ function Transfer() {
                                 <div className="flex flex-col items-center justify-center mb-5">
                                     <div className="flex flex-col items-center mb-10">
                                         <input onChange={(e) => setamount(e.target.value)} type="text" name="amount" placeholder="0.00" id="" className="flex text-4xl placeholder:text-4xl p-2 text-primary font-bold text-center mb-5 focus:outline-none" />
-                                        <h5 className="font-bold text-mb">Rp. {data[0] ? data[0].balance : ''} Available</h5>
+                                        <h5 className="font-bold text-mb">Rp. {data[0] ? new Intl.NumberFormat('en-DE').format(data[0].balance) : ''} Available</h5>
                                     </div>
                                     <div className={(notes == '' ? 'border-b-[#7A7886] border-opacity-50' : 'border-b-primary') + " flex gap-2 items-center border-b-[1px] py-2"}>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none">
