@@ -1,7 +1,9 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Header() {
+    const { isAuth } = useSelector((s) => s.user)
     const navigates = useNavigate();
     return (
         <>
@@ -12,12 +14,22 @@ function Header() {
                     </Link>
                 </div>
                 <div className="hidden flex gap-3 md:flex">
-                    <div className="w-[85px] h-[20px] border-2 border-primary rounded-lg p-4 flex items-center justify-center">
-                        <button onClick={() => navigates('/sign-in')} className="text-xs font-bold text-primary">Login</button>
-                    </div>
-                    <div className="w-[85px] h-[20px] border-2 border-primary bg-primary rounded-lg p-4 flex items-center justify-center">
-                        <button onClick={() => navigates('/sign-up')} className="text-xs font-bold text-white">Sign Up</button>
-                    </div>
+                    {
+                        isAuth == true ? (
+                            <div className="w-[85px] h-[20px] border-2 border-primary bg-primary rounded-lg p-4 flex items-center justify-center">
+                                <button onClick={() => navigates('/home')} className="text-xs font-bold text-white">Home</button>
+                            </div>
+                        ) : (
+                            <>
+                                <div className="w-[85px] h-[20px] border-2 border-primary rounded-lg p-4 flex items-center justify-center">
+                                    <button onClick={() => navigates('/sign-in')} className="text-xs font-bold text-primary">Login</button>
+                                </div>
+                                <div className="w-[85px] h-[20px] border-2 border-primary bg-primary rounded-lg p-4 flex items-center justify-center">
+                                    <button onClick={() => navigates('/sign-up')} className="text-xs font-bold text-white">Sign Up</button>
+                                </div>
+                            </>
+                        )
+                    }
                 </div>
                 <div className="flex items-center justify-between md:hidden">
                     <div className="dropdown">
@@ -41,12 +53,22 @@ function Header() {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-24 md:w-32"
                         >
-                            <li>
-                                <Link to="/sign-in" className="text-xs md:text-sm">Login</Link>
-                            </li>
-                            <li>
-                                <Link to="/sign-up" className="text-xs md:text-sm">Sign up</Link>
-                            </li>
+                            {
+                                isAuth == true ? (
+                                    <li>
+                                        <Link to="/home" className="text-xs md:text-sm">Home</Link>
+                                    </li>
+                                ) : (
+                                    <>
+                                        <li>
+                                            <Link to="/sign-up" className="text-xs md:text-sm">Login</Link>
+                                        </li>
+                                        <li>
+                                            <Link to="/sign-up" className="text-xs md:text-sm">Sign up</Link>
+                                        </li>
+                                    </>
+                                )
+                            }
                         </ul>
                     </div>
                 </div>

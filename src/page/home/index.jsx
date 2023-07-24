@@ -21,7 +21,6 @@ import { useDispatch, useSelector } from "react-redux";
 
 function home() {
     const { data } = useSelector((s) => s.user)
-    console.log(data)
     const api = useApi()
 
     const [datatrans, setdatatrans] = useState([])
@@ -64,7 +63,7 @@ function home() {
                                 <Link to='/#'><button className='flex text-white border items-center gap-x-3 w-28 justify-center hover:bg-white hover:text-primary rounded-lg h-12 mx-auto'><AiOutlinePlus /> Top Up</button></Link>
                             </div>
                         </div>
-                        <div className='lg:hidden flex gap-y-3'>
+                        <div className='lg:hidden flex justify-around gap-y-3'>
                             <Link to='/transfer'><button className='flex text-white border items-center gap-x-3 w-40 justify-center bg-gray-400 hover:bg-primary hover:text-white rounded-lg h-12 mx-auto'><LiaArrowUpSolid /> Transfer</button></Link>
                             <Link to='/#'><button className='flex text-white border items-center gap-x-3 w-40 justify-center bg-gray-400 hover:bg-primary hover:text-white rounded-lg h-12 mx-auto'><AiOutlinePlus /> Top Up</button></Link>
                         </div>

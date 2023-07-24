@@ -28,6 +28,13 @@ function header() {
         }
     }
 
+    function capitalName(text) {
+        return text.replace(/\w\S*/g, function (word) {
+            const newWord = word.slice(0, 1).toUpperCase() + word.substr(1);
+            return newWord;
+        });
+    }
+
     const getDataTransactionWeek = async () => {
         try {
             const { data } = await api({ method: 'get', url: `transaction?show_data_by=week&limit=2` })
@@ -50,9 +57,9 @@ function header() {
                         <h1 className='font-bold text-3xl text-primary'>Zwallet</h1>
                     </div>
                     <div className='flex lg:mx-0 justify-between gap-x-4 items-center'>
-                        <img src={data[0] && data[0].image != '' ? process.env.REACT_APP_API_URL + data[0].image : ''} alt="#" className='w-14 h-14 rounded-lg' />
+                        <img src={data[0] && data[0].image != '' ? process.env.REACT_APP_API_URL + data[0].image : ''} alt="#" className='w-14 h-14 rounded-lg object-cover' />
                         <div className='flex flex-col text-right justify-end'>
-                            <h2 className='font-bold text-lg'>{data[0] ? data[0].first_name + ' ' + data[0].last_name : ''}</h2>
+                            <h2 className='font-bold text-lg'>{data[0] ? capitalName(data[0].first_name + ' ' + data[0].last_name) : ''}</h2>
                             <h2 className='text-xs text-gray-600'>{data[0] ? data[0].phone == '' || data[0].phone == null ? ' - ' : data[0].phone : ''}</h2>
                         </div>
                         <div className="dropdown dropdown-end">
