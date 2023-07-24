@@ -2,8 +2,12 @@ import React from 'react'
 import Header from '../../component/homeComp/header'
 import Footer from '../../component/homeComp/footer'
 import Sidebar from '../../component/homeComp/sidebar'
+import authChecked from '../../helper/authCheck'
 
 function Top_up() {
+    useEffect(() => {
+        document.title = 'Top Up';
+    }, []);
     return (
         <>
             <Header />
@@ -68,4 +72,4 @@ function Top_up() {
     )
 }
 
-export default Top_up
+export default authChecked(true, Top_up, ['user'])

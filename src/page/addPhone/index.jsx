@@ -48,7 +48,9 @@ function addPhone() {
             seterror_message(error.response.data.message)
         }
     }
-
+    useEffect(() => {
+        document.title = 'Add Phone Number';
+    }, []);
     useEffect(() => {
         setTimeout(() => {
             seterror_message('')

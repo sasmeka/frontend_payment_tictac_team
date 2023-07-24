@@ -2,8 +2,6 @@ import React, { useEffect, useState, useContext } from 'react'
 import Header from '../../component/homeComp/header'
 import Footer from '../../component/homeComp/footer'
 import Sidebar from '../../component/homeComp/sidebar'
-import { BsTelephone, BsEyeSlash } from 'react-icons/bs'
-import { GoLock } from 'react-icons/go'
 
 import authChecked from '../../helper/authCheck'
 import ErrorContext from '../../helper/context_error'
@@ -71,7 +69,9 @@ function changePassword() {
             }
         }
     }
-
+    useEffect(() => {
+        document.title = 'Change Password';
+    }, []);
     useEffect(() => {
         setTimeout(() => {
             seterror_message('')

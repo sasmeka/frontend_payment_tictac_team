@@ -4,12 +4,15 @@ import { useSelector } from "react-redux";
 import Header from "../../component/homeComp/header";
 import Footer from "../../component/homeComp/footer";
 import Sidebar from "../../component/homeComp/sidebar";
+import authChecked from '../../helper/authCheck'
 
 function PersonalProfile() {
 
     const { data } = useSelector((s) => s.user)
     const navigates = useNavigate();
-
+    useEffect(() => {
+        document.title = 'Personal Profile';
+    }, []);
     return (
         <>
             <Header />
@@ -52,4 +55,4 @@ function PersonalProfile() {
 }
 
 
-export default PersonalProfile
+export default authChecked(true, PersonalProfile, ['user'])
