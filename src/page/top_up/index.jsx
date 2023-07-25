@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import Header from '../../component/homeComp/header'
 import Footer from '../../component/homeComp/footer'
 import Sidebar from '../../component/homeComp/sidebar'
