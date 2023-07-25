@@ -59,6 +59,7 @@ function changePin() {
             seterror_message('')
             setsuccess_message('update PIN succesfull.')
         } catch (error) {
+            setsuccess_message('')
             seterror_message(error.response.data.message)
         }
     }
@@ -67,13 +68,16 @@ function changePin() {
     const submintOtpold = () => {
         if (otpold.join("").length === 6) {
             if (otpold.join("") == data[0].pin) {
+                setsuccess_message('')
                 seterror_message('')
                 setstatus_change_pin(true)
             } else {
                 setOtpold(new Array(6).fill(""))
+                setsuccess_message('')
                 seterror_message('mismatched pins')
             }
         } else {
+            setsuccess_message('')
             seterror_message('need 6 number')
         }
     }

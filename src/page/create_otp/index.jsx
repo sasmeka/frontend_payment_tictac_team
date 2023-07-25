@@ -39,7 +39,9 @@ function Create_otp() {
             })
             dispatch(logout())
             setsuccess_message('success-create-otp')
+            seterror_message('')
         } catch (error) {
+            setsuccess_message('')
             seterror_message(error.response.data.message)
         }
     }
@@ -57,8 +59,9 @@ function Create_otp() {
     }, []);
     useEffect(() => {
         setTimeout(() => {
+            setsuccess_message('')
             seterror_message('')
-        }, 7000)
+        }, 10000)
     }, [error_message])
     return (
         <>

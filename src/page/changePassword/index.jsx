@@ -50,11 +50,12 @@ function changePassword() {
                 }
             })
             setsuccess_message(data.message)
+            seterror_message('')
             dispatch(logout())
             navigate('/sign-in')
         } catch (e) {
             seterror_message(e.response.data.error)
-            console.log(e.response.data.error)
+            setsuccess_message('')
         }
     }
 
@@ -76,7 +77,7 @@ function changePassword() {
         setTimeout(() => {
             seterror_message('')
             setsuccess_message('')
-        }, 7000)
+        }, 10000)
     }, [error_message, success_message]);
 
     return (

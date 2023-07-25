@@ -31,6 +31,7 @@ function addPhone() {
         }
         try {
             if (phone == '') {
+                setsuccess_message('')
                 seterror_message('phone number must be filled.')
             } else {
                 const { data } = await api({
@@ -42,9 +43,11 @@ function addPhone() {
                 })
                 dispatch(adddata(new_data))
                 setsuccess_message(data.message)
+                seterror_message('')
                 navigates('/manage_phone')
             }
         } catch (error) {
+            setsuccess_message('')
             seterror_message(error.response.data.message)
         }
     }
@@ -55,7 +58,7 @@ function addPhone() {
         setTimeout(() => {
             seterror_message('')
             setsuccess_message('')
-        }, 7000)
+        }, 10000)
     }, [error_message, success_message]);
 
     return (

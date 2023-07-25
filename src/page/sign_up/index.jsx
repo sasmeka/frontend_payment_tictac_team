@@ -36,9 +36,11 @@ function Sign_up() {
                     }
                 })
                 setsuccess_message(data.message)
+                seterror_message('')
                 navigate('/sign-in');
             }
         } catch (error) {
+            setsuccess_message('')
             seterror_message(error.response.data.message)
         }
     }
@@ -53,7 +55,7 @@ function Sign_up() {
         setTimeout(() => {
             seterror_message('')
             setsuccess_message('')
-        }, 7000)
+        }, 10000)
     }, [error_message, success_message]);
     return (
         <>

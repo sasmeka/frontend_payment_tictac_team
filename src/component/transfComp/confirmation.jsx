@@ -51,9 +51,11 @@ function Confirmation({ id, name, image, phone, amount, notes, balance_left, cre
       dispatch(adddata(data.data))
     } catch (error) {
       if (error.response.data.status == 401) {
+        setsuccess_message('')
         seterror_message(error.response.data.message)
         btnlogout()
       }
+      setsuccess_message('')
       seterror_message(error.response.data.message)
       console.log(error.response.data)
     }
@@ -77,6 +79,7 @@ function Confirmation({ id, name, image, phone, amount, notes, balance_left, cre
       setstatus_transfer(true)
     } catch (e) {
       setstatus_transfer(false)
+      setsuccess_message('')
       seterror_message(e.response.data.error)
     }
   }
@@ -87,9 +90,11 @@ function Confirmation({ id, name, image, phone, amount, notes, balance_left, cre
       if (pin.join("") == pin_user) {
         TranferMoney()
       } else {
+        setsuccess_message('')
         seterror_message('wrong PIN.')
       }
     } else {
+      setsuccess_message('')
       seterror_message('PIN need 6 number')
     }
     closeModal()
@@ -98,7 +103,7 @@ function Confirmation({ id, name, image, phone, amount, notes, balance_left, cre
     setTimeout(() => {
       seterror_message('')
       setsuccess_message('')
-    }, 15000)
+    }, 25000)
   }, [error_message, success_message])
 
   return (

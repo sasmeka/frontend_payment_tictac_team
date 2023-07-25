@@ -36,6 +36,7 @@ function Sign_in() {
             dispatch(addrefresh_token(data.Refresh_Token))
             navigate('/home');
         } catch (error) {
+            setsuccess_message('')
             seterror_message(error.response.data.message)
         }
     }
@@ -53,7 +54,7 @@ function Sign_in() {
         setTimeout(() => {
             seterror_message('')
             setsuccess_message('')
-        }, 7000)
+        }, 10000)
     }, [error_message, success_message]);
     return (
         <>

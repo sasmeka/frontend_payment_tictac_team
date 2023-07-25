@@ -35,6 +35,7 @@ function Reset_password() {
                         "pass": new_password
                     }
                 })
+                seterror_message('')
                 setsuccess_message(data.message)
                 navigate(`/sign-in`)
             }
@@ -63,7 +64,7 @@ function Reset_password() {
         setTimeout(() => {
             seterror_message('')
             setsuccess_message('')
-        }, 7000)
+        }, 10000)
     }, [error_message, success_message]);
     return (
         <>

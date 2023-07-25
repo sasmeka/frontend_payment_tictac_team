@@ -38,6 +38,7 @@ function Manage_phone() {
             setsuccess_message('delete phone number succesfull.')
             navigates('/personal-info')
         } catch (error) {
+            setsuccess_message('')
             seterror_message(error.response.data.message)
         }
     }

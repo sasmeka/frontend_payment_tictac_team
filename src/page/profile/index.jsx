@@ -70,9 +70,8 @@ function Profile() {
                 }
             });
             getDataUser()
-            // setsuccess_message(data.message)
-            // console.log(data.message)
         } catch (error) {
+            setsuccess_message('')
             if (error.response.data.status == 401) {
                 seterror_message(error.response.data.message)
                 dispatch(logout())
@@ -86,6 +85,12 @@ function Profile() {
     useEffect(() => {
         document.title = 'Profile';
     }, [])
+    useEffect(() => {
+        setTimeout(() => {
+            seterror_message('')
+            setsuccess_message('')
+        }, 10000)
+    }, [error_message, success_message]);
     useEffect(() => {
         changeImage()
     }, [imagereader])
