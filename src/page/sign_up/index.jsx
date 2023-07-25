@@ -55,7 +55,7 @@ function Sign_up() {
         setTimeout(() => {
             seterror_message('')
             setsuccess_message('')
-        }, 10000)
+        }, 15000)
     }, [error_message, success_message]);
     return (
         <>
