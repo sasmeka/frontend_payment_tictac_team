@@ -101,7 +101,7 @@ function Profile() {
                 <div className="p-5 bg-gray-100 max-w-7xl mx-auto">
                     <div className="lg:grid flex flex-col grid-rows-4 grid-flow-col gap-4 h-screen">
                         <Sidebar />
-                        <div className="row-span-4 col-span-9 bg-white shadow-sm rounded-[15px] px-10 pt-16 pb-10 flex items-center flex-col">
+                        <div className="row-span-4 col-span-9 bg-white shadow-sm rounded-[15px] px-10 pt-16 pb-10 flex items-center flex-col h-screen">
                             <div className="flex flex-col items-center gap-1">
                                 <div className="flex w-[130px] mt-5 mb-2">
                                     <Link className="flex h-[130px] w-[130px]" id="file" onClick={() => { imgRef.current.showPicker(); }} >
