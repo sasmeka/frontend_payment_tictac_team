@@ -54,13 +54,11 @@ function home() {
     return (
         <>
             <Header />
-            <div className='bg-gray-200'>
-                <div className="p-5 bg-gray-200 max-w-7xl mx-auto">
-                    <div className="lg:grid flex flex-col grid-rows-4 grid-flow-col gap-4">
-                        <div className="hidden lg:grid row-span-4 grid-rows-4 w-full bg-white auto-cols-min rounded-lg">
-                            <Sidebar />
-                        </div>
-                        <div className="col-span-2 bg-primary h-40 flex items-center rounded-lg justify-between px-10 py-5">
+            <div className='bg-gray-100 h-full'>
+                <div className="p-5 bg-gray-100 max-w-7xl mx-auto ">
+                    <div className="lg:grid flex flex-col grid-rows-4 grid-flow-col grid-auto-cols gap-4 mx-auto h-screen">
+                        <Sidebar />
+                        <div className="col-span-2 bg-primary flex items-center rounded-lg justify-between px-10 py-5">
                             <div className='flex flex-col gap-y-3'>
                                 <h2 className='text-lg text-gray-300 mt-2'>Balance</h2>
                                 <h1 className='text-4xl text-white font-bold'>Rp. {data[0] ? new Intl.NumberFormat('en-DE').format(data[0].balance) : ""}</h1>
@@ -80,7 +78,7 @@ function home() {
                             <Link to='/top_up'><button className='flex text-white border items-center gap-x-3 w-40 justify-center bg-gray-400 hover:bg-primary hover:text-white rounded-lg h-12 mx-auto'><AiOutlinePlus /> Top Up</button></Link>
                         </div>
                         <div className="lg:flex flex-col hidden row-span-3 bg-white rounded-lg">
-                            <div className='flex justify-between p-4 mt-5 mx-5'>
+                            <div className='flex justify-between mt-5 mx-5'>
                                 <div>
                                     <img src={down} alt="" />
                                     <h2>Income</h2>
@@ -92,7 +90,7 @@ function home() {
                                     <h2 className='font-bold text-xl'>Rp. {new Intl.NumberFormat('en-DE').format(send)}</h2>
                                 </div>
                             </div>
-                            <img src={dummyData} alt="" className='mt-20 pb-5 flex px-5 items-center mx-auto' />
+                            <img src={dummyData} alt="" className='mt-24 flex px-5 items-center mx-auto' />
                         </div>
                         <div className="row-span-3 bg-white rounded-lg overflow-auto">
                             <div className='flex justify-between mx-5 mt-5'>
@@ -147,6 +145,7 @@ function home() {
                 </div>
             </div>
             <Footer />
+            
         </>
 
     )

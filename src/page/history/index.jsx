@@ -75,13 +75,11 @@ function history() {
     return (
         <>
             <Header />
-            <div className='bg-gray-200'>
-                <div className="p-5 bg-gray-200 max-w-7xl mx-auto">
-                    <div className="lg:grid flex flex-col grid-rows-4 grid-flow-col gap-4">
-                        <div className="hidden lg:grid row-span-4 grid-rows-4 w-full bg-white auto-cols-min rounded-lg">
-                            <Sidebar />
-                        </div>
-                        <div className="row-span-4 col-span-10 bg-white md:h-full h-screen rounded-lg overflow-auto ">
+            <div className='bg-gray-100'>
+                <div className="p-5 bg-gray-100 max-w-7xl mx-auto">
+                    <div className="lg:grid flex flex-col grid-rows-4 grid-flow-col gap-4 h-screen">
+                        <Sidebar />
+                        <div className="row-span-4 col-span-10 bg-white md:h-full h-screen rounded-lg overflow-auto">
                             <div className='flex justify-between mx-5 mt-5'>
                                 <h1 className='text-lg font-bold'>Transaction History</h1>
                             </div>
