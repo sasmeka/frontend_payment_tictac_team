@@ -92,7 +92,7 @@ function home() {
                             </div>
                             <img src={dummyData} alt="" className='mt-24 flex px-5 items-center mx-auto' />
                         </div>
-                        <div className="row-span-3 bg-white rounded-lg overflow-auto">
+                        <div className="row-span-3 bg-white rounded-lg overflow-auto lg:h-auto h-screen">
                             <div className='flex justify-between mx-5 mt-5'>
                                 <h1 className='text-lg font-bold'>Transaction History</h1>
                                 <Link to='/history' className='text-base text-primary hover:font-bold'>view all</Link>
