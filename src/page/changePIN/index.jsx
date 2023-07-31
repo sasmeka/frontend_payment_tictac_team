@@ -134,7 +134,7 @@ function changePin() {
                                                                 <input
                                                                     type="text"
                                                                     name="otp"
-                                                                    className="md:w-16 md:h-16 w-10 h-10 items-center justify-center text-center md:px-5 px-1 outline-none rounded-xl border border-gray-200 text-2xl md:text-3xl bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
+                                                                    className="md:w-16 md:h-16 w-8 h-8 items-center justify-center text-center md:px-5 px-1 outline-none rounded-md md:rounded-xl border border-gray-200 text-2xl md:text-3xl bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
                                                                     maxLength={1}
                                                                     key={i}
                                                                     value={data}
@@ -158,7 +158,7 @@ function changePin() {
                                                                 )
                                                             )
                                                         }
-                                                        <button type='submit' className={(otp.join("").length === 6 ? "bg-[#6379F4] text-white" : "bg-[#e7e7e7] text-gray-500") + ' md:w-96 w-72 h-12 rounded-lg hover:bg-gray-600 hover:text-white'}>Change PIN</button>
+                                                        <button type='submit' className={(otp.join("").length === 6 ? "bg-[#6379F4] text-white" : "bg-[#e7e7e7] text-gray-500") + ' md:w-96 w-48 md:h-12 h-10 rounded-sm md:rounded-lg hover:bg-gray-600 hover:text-white'}>Change PIN</button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -172,7 +172,7 @@ function changePin() {
                                                             <input
                                                                 type="text"
                                                                 name="otpold"
-                                                                className="md:w-16 md:h-16 w-10 h-10 items-center justify-center text-center md:px-5 px-1 outline-none rounded-xl border border-gray-200 text-2xl md:text-3xl bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
+                                                                className="md:w-16 md:h-16 w-8 h-8 items-center justify-center text-center md:px-5 px-1 outline-none rounded-md md:rounded-xl border border-gray-200 text-2xl md:text-3xl bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
                                                                 maxLength={1}
                                                                 key={i}
                                                                 value={data}
@@ -196,7 +196,7 @@ function changePin() {
                                                             )
                                                         )
                                                     }
-                                                    <button onClick={submintOtpold} className={(otpold.join("").length === 6 ? "bg-[#6379F4] text-white" : "bg-[#e7e7e7] text-gray-500") + ' md:w-96 w-72 h-12 rounded-lg hover:bg-gray-600 hover:text-white'}>Continue</button>
+                                                    <button onClick={submintOtpold} className={(otpold.join("").length === 6 ? "bg-[#6379F4] text-white" : "bg-[#e7e7e7] text-gray-500") + ' md:w-96 w-48 md:h-12 h-10 rounded-sm md:rounded-lg hover:bg-gray-600 hover:text-white'}>Continue</button>
                                                 </div>
                                             </div>
                                         </>

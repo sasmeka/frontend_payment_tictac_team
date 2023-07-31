@@ -101,7 +101,7 @@ function Profile() {
                 <div className="p-5 bg-gray-100 max-w-7xl mx-auto">
                     <div className="lg:grid flex flex-col grid-rows-4 grid-flow-col gap-4 h-screen">
                         <Sidebar />
-                        <div className="row-span-4 col-span-9 bg-white shadow-sm rounded-[15px] px-10 pt-16 pb-10 flex items-center flex-col h-screen">
+                        <div className="row-span-4 col-span-9 bg-white shadow-sm rounded-[15px] px-10 pt-16 pb-10 flex items-center flex-col h-screen overflow-auto">
                             <div className="flex flex-col items-center gap-1">
                                 <div className="flex w-[130px] mt-5 mb-2">
                                     <Link className="flex h-[130px] w-[130px]" id="file" onClick={() => { imgRef.current.showPicker(); }} >
@@ -137,27 +137,27 @@ function Profile() {
                                 )
                             }
                             <div className="flex flex-col gap-3 my-5 w-full items-center">
-                                <button className="bg-gray-200 p-3 h-10 md:h-16 w-8/12 rounded-lg my-2">
-                                    <Link to="/personal-info" className="flex justify-between items-center text-sm md:text-md font-medium pl-5">
+                                <button className="bg-gray-200 px-2 md:px-3 h-10 md:h-16 w-8/12 rounded-lg my-2">
+                                    <Link to="/personal-info" className="flex justify-between items-center text-[10px] md:text-xl font-medium md:pl-5">
                                         Personal Information
                                         <i class="fa fa-angle-right text-xl pr-5" aria-hidden="true"></i>
                                     </Link>
 
                                 </button>
-                                <button className="bg-gray-200 p-3 h-10 md:h-16 w-8/12 rounded-lg my-2">
-                                    <Link to="/change-password" className="flex justify-between items-center text-sm md:text-md font-medium pl-5">
+                                <button className="bg-gray-200 px-2 md:px-3 h-10 md:h-16 w-8/12 rounded-lg my-2">
+                                    <Link to="/change-password" className="flex justify-between items-center text-[10px] md:text-xl font-medium md:pl-5">
                                         Change Password
                                         <i class="fa fa-angle-right text-xl pr-5" aria-hidden="true"></i>
                                     </Link>
                                 </button>
-                                <button className="bg-gray-200 p-3 h-10 md:h-16 w-8/12 rounded-lg my-2">
-                                    <Link to="/change-pin" className="flex justify-between items-center text-sm md:text-md font-medium pl-5">
+                                <button className="bg-gray-200 px-2 md:px-3 h-10 md:h-16 w-8/12 rounded-lg my-2">
+                                    <Link to="/change-pin" className="flex justify-between items-center text-[10px] md:text-xl font-medium md:pl-5">
                                         Change PIN
                                         <i class="fa fa-angle-right text-xl pr-5" aria-hidden="true"></i>
                                     </Link>
                                 </button>
-                                <button onClick={btnlogout} className="bg-gray-200 p-3 h-10 md:h-16 w-8/12 rounded-lg my-2">
-                                    <Link className="flex justify-between items-center text-sm md:text-md font-medium pl-5">
+                                <button onClick={btnlogout} className="bg-gray-200 px-2 md:px-3 h-10 md:h-16 w-8/12 rounded-lg my-2">
+                                    <Link className="flex justify-between items-center text-[10px] md:text-xl font-medium md:pl-5">
                                         Logout
                                         <i class="fa fa-angle-right text-xl pr-5" aria-hidden="true"></i>
                                     </Link>

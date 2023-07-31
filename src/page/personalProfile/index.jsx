@@ -20,7 +20,7 @@ function PersonalProfile() {
                 <div className="p-5 bg-gray-100 max-w-7xl mx-auto">
                     <div className="lg:grid flex flex-col grid-rows-4 grid-flow-col gap-4 h-screen">
                         <Sidebar />
-                        <div className="row-span-4 col-span-9 bg-white shadow-md rounded-[15px] px-10 pt-16 pb-10 flex items-start flex-col h-screen">
+                        <div className="row-span-4 col-span-9 bg-white shadow-md rounded-[15px] px-10 pt-16 pb-10 flex items-start flex-col h-screen overflow-auto">
                             <h1 className="font-bold">Personal Information</h1>
                             <p className="w-96 mt-10 text-gray-400 text-sm">We got your personal information from the sign up proccess. If you want to make changes on your information, contact our support.</p>
                             <div className="flex flex-col gap-3 w-full mt-5">

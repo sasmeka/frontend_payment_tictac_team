@@ -96,24 +96,24 @@ function changePassword() {
                             </div>
                             <div className=''>
                                 <div className="flex flex-col mb-10">
-                                    <div className="relative w-96 items-center mx-auto">
+                                    <div className="relative w-4/5 md:w-96 items-center mx-auto">
                                         <i className={(error_message != '' ? 'text-red-400' : pass == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-lock absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
-                                        <input type={cpass1 ? "password" : "text"} onChange={(e) => setPass(e.target.value)} className={(error_message != '' ? 'border-red-400' : pass == '' ? 'border-opacity-50 border-[#A9A9A9]' : 'border-[#6379F4]') + " focus:outline-none h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your old password" />
-                                        <Link onClick={click_pass1}><i className="fa fa-eye absolute top-4 md:top-[1.1rem] right-3 text-[#A0A3BD]" aria-hidden="true"></i></Link>
+                                        <input type={cpass1 ? "password" : "text"} onChange={(e) => setPass(e.target.value)} className={(error_message != '' ? 'border-red-400' : pass == '' ? 'border-opacity-50 border-[#A9A9A9]' : 'border-[#6379F4]') + " focus:outline-none text-[12px] md:text-[14px] h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Old password" />
+                                        <Link onClick={click_pass1}><i className="bg-white fa fa-eye absolute top-4 md:top-[1.1rem] right-2 text-[#A0A3BD]" aria-hidden="true"></i></Link>
                                     </div>
                                 </div>
                                 <div className="flex flex-col mb-10">
-                                    <div className="relative w-96 items-center mx-auto">
+                                    <div className="relative w-4/5 md:w-96 items-center mx-auto">
                                         <i className={(error_message != '' ? 'text-red-400' : passtrans == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-lock absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
-                                        <input type={cpass2 ? "password" : "text"} onChange={(e) => setpasstrans(e.target.value)} className={(error_message != '' ? 'border-red-400' : passtrans === '' ? 'border-opacity-50 border-[#A9A9A9]' : 'border-[#6379F4]') + " focus:outline-none h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your new password" />
-                                        <Link onClick={click_pass2}><i className="fa fa-eye absolute top-4 md:top-[1.1rem] right-3 text-[#A0A3BD]" aria-hidden="true"></i></Link>
+                                        <input type={cpass2 ? "password" : "text"} onChange={(e) => setpasstrans(e.target.value)} className={(error_message != '' ? 'border-red-400' : passtrans === '' ? 'border-opacity-50 border-[#A9A9A9]' : 'border-[#6379F4]') + " focus:outline-none text-[12px] md:text-[14px] h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="New password" />
+                                        <Link onClick={click_pass2}><i className="bg-white fa fa-eye absolute top-4 md:top-[1.1rem] right-2 text-[#A0A3BD]" aria-hidden="true"></i></Link>
                                     </div>
                                 </div>
                                 <div className="flex flex-col mb-10">
-                                    <div className="relative w-96 items-center mx-auto">
+                                    <div className="relative w-4/5 md:w-96 items-center mx-auto">
                                         <i className={(error_message != '' ? 'text-red-400' : newPass == '' ? 'text-[#A0A3BD]' : 'text-[#6379F4]') + " fa fa-lock absolute top-4 md:top-[1.1rem] left-3"} aria-hidden="true"></i>
-                                        <input type={cpass3 ? "password" : "text"} onChange={(e) => setNewpass(e.target.value)} className={(error_message !== '' ? 'border-red-400' : newPass === '' ? 'border-opacity-50 border-[#A9A9A9]' : 'border-[#6379F4]') + " focus:outline-none h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Enter your confirm new password" />
-                                        <Link onClick={click_pass3}><i className="fa fa-eye absolute top-4 md:top-[1.1rem] right-3 text-[#A0A3BD]" aria-hidden="true"></i></Link>
+                                        <input type={cpass3 ? "password" : "text"} onChange={(e) => setNewpass(e.target.value)} className={(error_message !== '' ? 'border-red-400' : newPass === '' ? 'border-opacity-50 border-[#A9A9A9]' : 'border-[#6379F4]') + " focus:outline-none text-[12px] md:text-[14px] h-12 md:h-14 w-full border-b-[3px] pl-10 placeholder:text-[#A0A3BD] placeholder:tracking-wider"} placeholder="Confirm new password" />
+                                        <Link onClick={click_pass3}><i className="bg-white fa fa-eye absolute top-4 md:top-[1.1rem] right-2 text-[#A0A3BD]" aria-hidden="true"></i></Link>
                                     </div>
                                 </div>
                                 {
