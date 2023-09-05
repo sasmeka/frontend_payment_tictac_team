@@ -144,7 +144,7 @@ function header() {
                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
                             <li><Link to='/home'>Dashboad</Link></li>
                             <li><Link to='/profile'>Profile</Link></li>
-                            <li><Link onClick={() => { dispatch(logout()), navigates('/sign-in') }}>Logout</Link></li>
+                            <li><Link onClick={() => { dispatch(logout()), navigates('/sign-in'), location.reload() }}>Logout</Link></li>
                         </ul>
                     </div>
                 </div >
