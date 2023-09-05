@@ -105,7 +105,7 @@ function Profile() {
                             <div className="flex flex-col items-center gap-1">
                                 <div className="flex w-[130px] mt-5 mb-2">
                                     <Link className="flex h-[130px] w-[130px]" id="file" onClick={() => { imgRef.current.showPicker(); }} >
-                                        <img className="w-full object-cover rounded-lg" src={imagereader == "" ? process.env.REACT_APP_API_URL + image : imagereader} alt="" />
+                                        <img className="w-full object-cover rounded-lg" src={imagereader == "" ? image : imagereader} alt="" />
                                     </Link>
                                     <input
                                         type="file"
